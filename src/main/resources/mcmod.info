@@ -1,0 +1,16 @@
+[
+{
+  "modid": "runecraft",
+  "name": "Runecraft",
+  "description": "Runecraft, combine Runescape with Minecraft.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["DUDEiFAIL"],
+  "credits": "Jagex and Mojang, and CPW",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

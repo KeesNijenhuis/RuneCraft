@@ -1,0 +1,38 @@
+[16:38:33] [Client thread/INFO]: Setting user: Player864
+[16:38:35] [Client thread/INFO]: LWJGL Version: 2.9.4
+[16:38:37] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Runecraft
+[16:38:38] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[16:38:38] [Thread-9/INFO]: Initializing LWJGL OpenAL
+[16:38:38] [Thread-9/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[16:38:38] [Thread-9/INFO]: OpenAL initialized.
+[16:38:38] [Sound Library Loader/INFO]: Sound engine started
+[16:38:41] [Client thread/INFO]: Created: 16x16 textures-atlas
+[16:38:42] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Runecraft
+[16:38:42] [Client thread/INFO]: SoundSystem shutting down...
+[16:38:42] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[16:38:42] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[16:38:42] [Thread-11/INFO]: Initializing LWJGL OpenAL
+[16:38:42] [Thread-11/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[16:38:42] [Thread-11/INFO]: OpenAL initialized.
+[16:38:43] [Sound Library Loader/INFO]: Sound engine started
+[16:38:45] [Client thread/INFO]: Created: 512x512 textures-atlas
+[16:38:46] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[16:38:55] [Server thread/INFO]: Starting integrated minecraft server version 1.8.9
+[16:38:55] [Server thread/INFO]: Generating keypair
+[16:38:55] [Server thread/INFO]: Preparing start region for level 0
+[16:38:56] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[16:38:56] [Server thread/INFO]: Changing view distance to 12, from 10
+[16:38:57] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[16:38:57] [Server thread/INFO]: Player864[local:E:d39cff77] logged in with entity id 405 at (121.28426070131762, 92.0, 260.3123640280244)
+[16:38:57] [Server thread/INFO]: Player864 joined the game
+[16:38:59] [Server thread/INFO]: Player864 has just earned the achievement [Taking Inventory]
+[16:38:59] [Client thread/INFO]: [CHAT] Player864 has just earned the achievement [Taking Inventory]
+[16:39:23] [Client thread/INFO]: Stopping!
+[16:39:23] [Client thread/INFO]: SoundSystem shutting down...
+[16:39:23] [Server thread/INFO]: Stopping server
+[16:39:23] [Server thread/INFO]: Saving players
+[16:39:23] [Server thread/INFO]: Saving worlds
+[16:39:23] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[16:39:23] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[16:39:23] [Client Shutdown Thread/INFO]: Stopping server
+[16:39:23] [Client Shutdown Thread/INFO]: Saving players

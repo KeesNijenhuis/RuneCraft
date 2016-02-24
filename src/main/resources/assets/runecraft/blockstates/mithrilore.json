@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "normal": {"model": "runecraft:mithrilore"},
+        "inventory": {"model": "runecraft:mithrilore"}
+        
+    }
+}
