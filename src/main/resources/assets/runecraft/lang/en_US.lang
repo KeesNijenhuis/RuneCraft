@@ -7,3 +7,10 @@ item.oremithril.name=Mithril Ore
 item.oreadamantite.name=Adamantite Ore
 item.orerunite.name=Runite Ore
 item.oresilver.name=Silver Ore
+
+item.pickaxebronze.name=Bronze Pickaxe
+item.pickaxeiron.name=Iron Pickaxe
+item.pickaxesteel.name=Steel Pickaxe
+item.pickaxemithril.name=Mithril Pickaxe
+item.pickaxeadamant.name=Adamant Pickaxe
+item.pickaxerune.name=Rune Pickaxe

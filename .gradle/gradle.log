@@ -21,9 +21,9 @@ This set of MCP mappings was designed for MC 1.8.8. Use at your own peril.This s
 :getAssets
 :makeStart
 :makeEclipseCleanRunClient
-:makeEclipseCleanRunServer
+:makeEclipseCleanRunServer UP-TO-DATE
 :eclipse
 
 BUILD SUCCESSFUL
 
-Total time: 10.782 secs
+Total time: 8.72 secs

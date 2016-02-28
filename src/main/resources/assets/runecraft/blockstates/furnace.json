@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=north": { "model": "runecraft:furnace", "y": 180  },
+        "facing=south": { "model": "runecraft:furnace"},
+        "facing=west":  { "model": "runecraft:furnace", "y": 90 },
+        "facing=east":  { "model": "runecraft:furnace", "y": 270 },
+        "inventory": {"model": "runecraft:furnace"}
+        
+    }
+}

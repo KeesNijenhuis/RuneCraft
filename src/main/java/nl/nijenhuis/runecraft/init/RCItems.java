@@ -1,8 +1,10 @@
 package nl.nijenhuis.runecraft.init;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import nl.nijenhuis.runecraft.help.RegisterHelper;
 import nl.nijenhuis.runecraft.items.ItemRunecraft;
+import nl.nijenhuis.runecraft.items.RunecraftPickaxe;
 
 public class RCItems {
 	
@@ -16,6 +18,14 @@ public class RCItems {
 	public static Item orerunite = new ItemRunecraft().setUnlocalizedName("orerunite");
 	public static Item oregold = new ItemRunecraft().setUnlocalizedName("oregold");
 	public static Item orecoal = new ItemRunecraft().setUnlocalizedName("orecoal");
+	
+	public static Item pickaxebronze = new RunecraftPickaxe(ToolMaterial.EMERALD).setUnlocalizedName("pickaxebronze");
+	public static Item pickaxeiron = new RunecraftPickaxe(ToolMaterial.EMERALD).setUnlocalizedName("pickaxeiron");
+	public static Item pickaxesteel = new RunecraftPickaxe(ToolMaterial.EMERALD).setUnlocalizedName("pickaxesteel");
+	public static Item pickaxemithril = new RunecraftPickaxe(ToolMaterial.EMERALD).setUnlocalizedName("pickaxemithril");
+	public static Item pickaxeadamant = new RunecraftPickaxe(ToolMaterial.EMERALD).setUnlocalizedName("pickaxeadamant");
+	public static Item pickaxerune = new RunecraftPickaxe(ToolMaterial.EMERALD).setUnlocalizedName("pickaxerune");
+	
 	
 	
 
@@ -32,6 +42,14 @@ public class RCItems {
 		RegisterHelper.registerItem(oregold);
 		RegisterHelper.registerItem(orecoal);
 		
+		RegisterHelper.registerItem(pickaxebronze);
+		RegisterHelper.registerItem(pickaxeiron);
+		RegisterHelper.registerItem(pickaxesteel);
+		RegisterHelper.registerItem(pickaxemithril);
+		RegisterHelper.registerItem(pickaxeadamant);
+		RegisterHelper.registerItem(pickaxerune);
+		
+		
 	}
 	
 	public static void registerItemRenderer() {
@@ -47,6 +65,13 @@ public class RCItems {
 		RegisterHelper.registerItemRenderer(oregold);
 		RegisterHelper.registerItemRenderer(orecoal);
 		
+		RegisterHelper.registerItemRenderer(pickaxebronze);
+		RegisterHelper.registerItemRenderer(pickaxeiron);
+		RegisterHelper.registerItemRenderer(pickaxesteel);
+		RegisterHelper.registerItemRenderer(pickaxemithril);
+		RegisterHelper.registerItemRenderer(pickaxeadamant);
+		RegisterHelper.registerItemRenderer(pickaxerune);
+				
 
 	}
 	

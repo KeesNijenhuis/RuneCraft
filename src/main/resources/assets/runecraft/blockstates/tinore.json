@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "normal": {"model": "runecraft:tinore"},
+        "inventory": {"model": "runecraft:tinore"}
+        
+    }
+}

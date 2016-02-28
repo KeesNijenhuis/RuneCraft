@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "normal": {"model": "runecraft:copperore"},
+        "inventory": {"model": "runecraft:copperore"}
+        
+    }
+}
