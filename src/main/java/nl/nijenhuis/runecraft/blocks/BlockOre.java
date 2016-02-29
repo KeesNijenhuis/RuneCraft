@@ -6,10 +6,15 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumWorldBlockLayer;
+import net.minecraft.world.World;
+import nl.nijenhuis.runecraft.help.LogHelper;
 import nl.nijenhuis.runecraft.init.RCBlocks;
 import nl.nijenhuis.runecraft.init.RCItems;
+import nl.nijenhuis.runecraft.level.LevelSystem;
 
 public class BlockOre extends Block{
 
@@ -40,4 +45,15 @@ public class BlockOre extends Block{
 	    {
 	        return this == RCBlocks.mithrilore ? RCItems.oremithril : (this == RCBlocks.copperore ? RCItems.orecopper : (this == RCBlocks.tinore ? RCItems.oretin : Item.getItemFromBlock(this)));
 	    }
+	 
+	 @Override
+	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
+		super.onBlockDestroyedByPlayer(worldIn, pos, state);
+		
+		LevelSystem levelo = new LevelSystem();
+		
+		levelo.levelSystem(worldIn, 15, RCBlocks.copperore, "mining", pos);
+		LogHelper.debug("EXP ADDED: " + levelo.amountXp);
+		System.out.println("EXP ADDED: " + levelo.amountXp);
+	}
 }

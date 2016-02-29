@@ -14,3 +14,10 @@ item.pickaxesteel.name=Steel Pickaxe
 item.pickaxemithril.name=Mithril Pickaxe
 item.pickaxeadamant.name=Adamant Pickaxe
 item.pickaxerune.name=Rune Pickaxe
+
+item.axebronze.name=Bronze Axe
+item.axeiron.name=Iron Axe
+item.axesteel.name=Steel Axe
+item.axemithril.name=Mithril Axe
+item.axeadamant.name=Adamant Axe
+item.axerune.name=Rune Axe

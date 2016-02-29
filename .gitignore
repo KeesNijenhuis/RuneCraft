@@ -9,3 +9,8 @@ run/
 build.gradle
 gradlew
 bradlew.bat
+saves/
+resourcepacks/
+config/
+logs/
+mods/

@@ -3,6 +3,7 @@ package nl.nijenhuis.runecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -15,6 +16,7 @@ import nl.nijenhuis.runecraft.help.RecipeRemover;
 import nl.nijenhuis.runecraft.help.Reference;
 import nl.nijenhuis.runecraft.init.RCBlocks;
 import nl.nijenhuis.runecraft.init.RCItems;
+import nl.nijenhuis.runecraft.level.LevelSystem;
 import nl.nijenhuis.runecraft.proxy.CommonProxy;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
@@ -72,10 +74,17 @@ public class Runecraft {
 		
 		RecipeRemover.removeRecipes(new ItemStack(Blocks.furnace), new ItemStack(Blocks.furnace));
 	}
+	
+	public LevelSystem level;
+	
+	/*public void levelThings(World world, int x, RCBlocks block) {
+		level.levelSystem(world, 15, block, "mining");
+	}*/
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
 		proxy.registerRenderers();
+		
 	}
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
