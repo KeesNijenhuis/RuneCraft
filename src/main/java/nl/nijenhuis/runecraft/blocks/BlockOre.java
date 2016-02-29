@@ -40,6 +40,7 @@ public class BlockOre extends Block {
 		SkillMining.setCurrentLevel(level.getCurrentLevel());
 		SkillMining.setCurrentXp(level.getAddedXp() + level.getCurrentXp());
 		System.out.println("EXPERIENCE: " + level.getCurrentXp());
+		
 		level.calcExpNeeded();
 		level.levelUp();
 	

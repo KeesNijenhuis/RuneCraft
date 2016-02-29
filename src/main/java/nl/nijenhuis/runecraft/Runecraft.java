@@ -15,80 +15,75 @@ import nl.nijenhuis.runecraft.help.RecipeRemover;
 import nl.nijenhuis.runecraft.help.Reference;
 import nl.nijenhuis.runecraft.init.RCBlocks;
 import nl.nijenhuis.runecraft.init.RCItems;
-import nl.nijenhuis.runecraft.level.SkillMining;
 import nl.nijenhuis.runecraft.proxy.CommonProxy;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
-
-
 
 public class Runecraft {
 
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.COMMON_PROXY)
 	public static CommonProxy proxy;
-	
+
 	@Instance()
 	public static Runecraft instance;
-	
+
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		RCItems.registerItems();
 		RCBlocks.registerBlocks();
-		
+
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, GuiHandlerRegistry.getInstance());
 		GuiHandlerRegistry.getInstance().registerGuiHandler(new GuiHandler(), GuiHandler.getGuiID());
+
 		
-		
-		
-		/*GameRegistry.registerTileEntity(TileEntityRCFurnace.class, "RCfurnace");
-		*/
+
+		/*
+		 * GameRegistry.registerTileEntity(TileEntityRCFurnace.class,
+		 * "RCfurnace");
+		 */
 		RecipeRemover.removeRecipes(new ItemStack(Items.wooden_pickaxe), new ItemStack(Items.wooden_pickaxe));
 		RecipeRemover.removeRecipes(new ItemStack(Items.wooden_axe), new ItemStack(Items.wooden_axe));
 		RecipeRemover.removeRecipes(new ItemStack(Items.wooden_shovel), new ItemStack(Items.wooden_shovel));
 		RecipeRemover.removeRecipes(new ItemStack(Items.wooden_hoe), new ItemStack(Items.wooden_hoe));
 		RecipeRemover.removeRecipes(new ItemStack(Items.wooden_sword), new ItemStack(Items.wooden_sword));
-		
+
 		RecipeRemover.removeRecipes(new ItemStack(Items.stone_pickaxe), new ItemStack(Items.stone_pickaxe));
 		RecipeRemover.removeRecipes(new ItemStack(Items.stone_axe), new ItemStack(Items.stone_axe));
 		RecipeRemover.removeRecipes(new ItemStack(Items.stone_shovel), new ItemStack(Items.stone_shovel));
 		RecipeRemover.removeRecipes(new ItemStack(Items.stone_hoe), new ItemStack(Items.stone_hoe));
 		RecipeRemover.removeRecipes(new ItemStack(Items.stone_sword), new ItemStack(Items.stone_sword));
-		
+
 		RecipeRemover.removeRecipes(new ItemStack(Items.iron_pickaxe), new ItemStack(Items.iron_pickaxe));
 		RecipeRemover.removeRecipes(new ItemStack(Items.iron_axe), new ItemStack(Items.iron_axe));
 		RecipeRemover.removeRecipes(new ItemStack(Items.iron_shovel), new ItemStack(Items.iron_shovel));
 		RecipeRemover.removeRecipes(new ItemStack(Items.iron_hoe), new ItemStack(Items.iron_hoe));
 		RecipeRemover.removeRecipes(new ItemStack(Items.iron_sword), new ItemStack(Items.iron_sword));
-		
+
 		RecipeRemover.removeRecipes(new ItemStack(Items.iron_pickaxe), new ItemStack(Items.iron_pickaxe));
 		RecipeRemover.removeRecipes(new ItemStack(Items.iron_axe), new ItemStack(Items.iron_axe));
 		RecipeRemover.removeRecipes(new ItemStack(Items.iron_shovel), new ItemStack(Items.iron_shovel));
 		RecipeRemover.removeRecipes(new ItemStack(Items.iron_hoe), new ItemStack(Items.iron_hoe));
 		RecipeRemover.removeRecipes(new ItemStack(Items.iron_sword), new ItemStack(Items.iron_sword));
-		
+
 		RecipeRemover.removeRecipes(new ItemStack(Items.iron_pickaxe), new ItemStack(Items.iron_pickaxe));
 		RecipeRemover.removeRecipes(new ItemStack(Items.iron_axe), new ItemStack(Items.iron_axe));
 		RecipeRemover.removeRecipes(new ItemStack(Items.iron_shovel), new ItemStack(Items.iron_shovel));
 		RecipeRemover.removeRecipes(new ItemStack(Items.iron_hoe), new ItemStack(Items.iron_hoe));
 		RecipeRemover.removeRecipes(new ItemStack(Items.iron_sword), new ItemStack(Items.iron_sword));
-		
-		
+
 		RecipeRemover.removeRecipes(new ItemStack(Blocks.furnace), new ItemStack(Blocks.furnace));
+		
+		
 	}
-	
-	public SkillMining level;
-	
-	/*public void levelThings(World world, int x, RCBlocks block) {
-		level.levelSystem(world, 15, block, "mining");
-	}*/
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
 		proxy.registerRenderers();
-		
+
 	}
+
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		
+
 	}
 }

@@ -29,6 +29,10 @@ public class SkillMining {
 		}
 	}
 	
+	public String getSkill() {
+		return "Mining";
+	}
+	
 	public boolean isMaxLevel() {
 		if(this.getCurrentLevel() == this.getMaxLevel()) {
 			return true;

@@ -11,6 +11,7 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
 import nl.nijenhuis.runecraft.help.Reference;
 import nl.nijenhuis.runecraft.level.SkillMining;
+import nl.nijenhuis.runecraft.level.SkillWoodcutting;
 
 public class GuiSkill extends GuiScreen {
 
@@ -21,20 +22,17 @@ public class GuiSkill extends GuiScreen {
 
 	private GuiButton buttonDone;
 
-	private SkillMining level;
+	private SkillMining mining;
+	private SkillWoodcutting woodcutting;
 
 	public GuiSkill() {
 
-		level = new SkillMining();
-
+		mining = new SkillMining();
+		woodcutting = new SkillWoodcutting();
 	}
 
 	@Override
 	public void initGui() {
-		/*
-		 * System.out.println("GuiSkill initGui()"); System.out.println("EXP:" +
-		 * level.getCurrentXp() + " LEVEL: " + level.getCurrentLevel());
-		 */
 		buttonList.clear();
 		Keyboard.enableRepeatEvents(true);
 
@@ -48,9 +46,8 @@ public class GuiSkill extends GuiScreen {
 
 	@Override
 	public void updateScreen() {
-		levelMining = level.getCurrentLevel();
-		currentExp = level.getCurrentXp();
-		// System.out.println("LEVEL: " + levelMining + " EXP: " + currentExp);
+		levelMining = mining.getCurrentLevel();
+		currentExp = mining.getCurrentXp();
 		buttonDone.visible = true;
 	}
 
@@ -65,8 +62,13 @@ public class GuiSkill extends GuiScreen {
 		int offsetTopScreen = 20;
 		drawTexturedModalRect(offsetFromScreenLeft, 20, 0, 0, imageWidth, imageHeight);
 		
-		this.fontRendererObj.drawString("" + level.getCurrentLevel(), offsetFromScreenLeft + 40, offsetTopScreen + 10, 0xFEFE00);
-		this.fontRendererObj.drawString("" + level.getCurrentLevel(), offsetFromScreenLeft + 51, offsetTopScreen + 24, 0xFEFE00);
+		//DRAWS STRINGS FOR MINING
+		this.fontRendererObj.drawString("" + mining.getCurrentLevel(), offsetFromScreenLeft + 40, offsetTopScreen + 10, 0xFEFE00);
+		this.fontRendererObj.drawString("" + mining.getCurrentLevel(), offsetFromScreenLeft + 51, offsetTopScreen + 24, 0xFEFE00);
+
+		//DRWAS STRINGS FOR WOODCUTTING
+		this.fontRendererObj.drawString("" + woodcutting.getCurrentLevel(), offsetFromScreenLeft + 40, offsetTopScreen + 40, 0xFEFE00);
+		this.fontRendererObj.drawString("" + woodcutting.getCurrentLevel(), offsetFromScreenLeft + 51, offsetTopScreen + 54, 0xFEFE00);
 
 	}
 
