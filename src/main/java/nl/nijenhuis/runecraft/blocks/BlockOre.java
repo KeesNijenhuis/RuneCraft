@@ -6,7 +6,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumWorldBlockLayer;
@@ -50,10 +49,11 @@ public class BlockOre extends Block{
 	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
 		super.onBlockDestroyedByPlayer(worldIn, pos, state);
 		
-		LevelSystem levelo = new LevelSystem();
+		LevelSystem levelSys = new LevelSystem(1, LevelSystem.getMiningLevel());
 		
-		levelo.levelSystem(worldIn, 15, RCBlocks.copperore, "mining", pos);
-		LogHelper.debug("EXP ADDED: " + levelo.amountXp);
-		System.out.println("EXP ADDED: " + levelo.amountXp);
+		levelSys.addExperience(1, this);
+		levelSys.hasEnoughXp(LevelSystem.getMiningLevel(), LevelSystem.getCurrentXp());
+		System.out.println("(BLOCK CLASS) MINING LEVEL: " + LevelSystem.getMiningLevel() + " CURRENT XP: " + LevelSystem.getCurrentXp());
+		
 	}
 }
