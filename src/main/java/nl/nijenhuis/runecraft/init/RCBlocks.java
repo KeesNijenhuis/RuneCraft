@@ -12,7 +12,6 @@ public class RCBlocks {
 	public static Block tinore = new BlockOre(Material.iron).setUnlocalizedName("tinore");
 	
 	
-	
 	public static void registerBlocks() {
 		RegisterHelper.registerBlock(mithrilore);
 		RegisterHelper.registerBlock(copperore);

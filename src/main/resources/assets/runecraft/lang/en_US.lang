@@ -21,3 +21,7 @@ item.axesteel.name=Steel Axe
 item.axemithril.name=Mithril Axe
 item.axeadamant.name=Adamant Axe
 item.axerune.name=Rune Axe
+
+tile.copperore.name="Copper Ore
+tile.tinore.name=Tin Ore
+tile.mithrilore.name=Mithril Ore

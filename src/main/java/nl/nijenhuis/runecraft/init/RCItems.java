@@ -4,6 +4,7 @@ import net.minecraft.item.Item;
 import nl.nijenhuis.runecraft.help.RegisterHelper;
 import nl.nijenhuis.runecraft.help.RunecraftArmory;
 import nl.nijenhuis.runecraft.items.ItemRunecraft;
+import nl.nijenhuis.runecraft.items.ItemSkillChecker;
 import nl.nijenhuis.runecraft.items.RunecraftAxe;
 import nl.nijenhuis.runecraft.items.RunecraftPickaxe;
 
@@ -37,7 +38,8 @@ public class RCItems {
 	public static Item axeadamant = new RunecraftAxe(RunecraftArmory.ADAMANT).setUnlocalizedName("axeadamant");
 	public static Item axerune = new RunecraftAxe(RunecraftArmory.RUNE).setUnlocalizedName("axerune");
 	
-	
+	//Skill Checker
+	public static Item skillchecker = new ItemSkillChecker().setUnlocalizedName("skillchecker");
 	
 	
 	
@@ -69,6 +71,8 @@ public class RCItems {
 		RegisterHelper.registerItem(axeadamant);
 		RegisterHelper.registerItem(axerune);
 		
+		RegisterHelper.registerItem(skillchecker);
+		
 		
 	}
 	
@@ -98,6 +102,8 @@ public class RCItems {
 		RegisterHelper.registerItemRenderer(axemithril);
 		RegisterHelper.registerItemRenderer(axeadamant);
 		RegisterHelper.registerItemRenderer(axerune);
+		
+		RegisterHelper.registerItemRenderer(skillchecker);
 				
 
 	}
