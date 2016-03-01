@@ -18,24 +18,20 @@ import nl.nijenhuis.runecraft.init.RCItems;
 import nl.nijenhuis.runecraft.proxy.CommonProxy;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
-
 public class Runecraft {
+
+	@Instance(Reference.MODID)
+	public static Runecraft instance;
 
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.COMMON_PROXY)
 	public static CommonProxy proxy;
-
-	@Instance()
-	public static Runecraft instance;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		RCItems.registerItems();
 		RCBlocks.registerBlocks();
 
-		NetworkRegistry.INSTANCE.registerGuiHandler(instance, GuiHandlerRegistry.getInstance());
-		GuiHandlerRegistry.getInstance().registerGuiHandler(new GuiHandler(), GuiHandler.getGuiID());
-
-		
+		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 
 		/*
 		 * GameRegistry.registerTileEntity(TileEntityRCFurnace.class,
@@ -72,8 +68,7 @@ public class Runecraft {
 		RecipeRemover.removeRecipes(new ItemStack(Items.iron_sword), new ItemStack(Items.iron_sword));
 
 		RecipeRemover.removeRecipes(new ItemStack(Blocks.furnace), new ItemStack(Blocks.furnace));
-		
-		
+
 	}
 
 	@Mod.EventHandler

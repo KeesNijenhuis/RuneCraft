@@ -1,0 +1,20 @@
+TODO LIST:
+
+- remove all recipes which I want removed
+- remove any vanilla world generation that I deem unnecessary
+- add the other ores (currently i have mithril, copper and tin)
+- add all the corresponding tools for the ores
+- add the furnace, doesnt need fuel, combine ores(such as copper and tin for bronze)
+- finish up the anvil
+- work on skills (woodcuttng and mining first)
+- in skill gui fix the cursor
+
+- add a god item which gives you 200m exp in all skills
+
+DONE LIST:
+
+- added copper, tin and mithril ore
+- added pickaxes and hatchets
+- added mining and woodcuttng(not final)
+- skill checker book
+- in skill gui add a box when hovering over a skill with current xp and xp till next level

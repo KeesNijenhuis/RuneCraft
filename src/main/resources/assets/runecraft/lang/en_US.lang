@@ -15,6 +15,9 @@ item.pickaxemithril.name=Mithril Pickaxe
 item.pickaxeadamant.name=Adamant Pickaxe
 item.pickaxerune.name=Rune Pickaxe
 
+item.skillchecker.name=Skill Checker
+item.itemhammer.name=Hammer
+
 item.axebronze.name=Bronze Axe
 item.axeiron.name=Iron Axe
 item.axesteel.name=Steel Axe
@@ -22,6 +25,8 @@ item.axemithril.name=Mithril Axe
 item.axeadamant.name=Adamant Axe
 item.axerune.name=Rune Axe
 
-tile.copperore.name="Copper Ore
+tile.copperore.name=Copper Ore
 tile.tinore.name=Tin Ore
 tile.mithrilore.name=Mithril Ore
+
+tile.anvil.name=Anvil

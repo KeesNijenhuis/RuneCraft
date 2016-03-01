@@ -1,6 +1,8 @@
 package nl.nijenhuis.runecraft.client.gui;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
@@ -17,6 +19,17 @@ public class GuiSkill extends GuiScreen {
 
 	private final int imageHeight = 129;
 	private final int imageWidth = 176;
+	
+	private static final int SKILL_WIDTH = 64;
+	private static final int SKILL_HEIGHT = 32;
+	
+	private static final int MINING_X = 4;
+	private static final int MINING_Y = 4;
+	
+	private static final int WOOD_X = 4;
+	private static final int WOOD_Y = 37;
+	
+	
 
 	private static ResourceLocation guiTexture = new ResourceLocation(Reference.MODID + ":textures/gui/gui.png");
 
@@ -27,8 +40,8 @@ public class GuiSkill extends GuiScreen {
 
 	public GuiSkill() {
 
-		mining = new SkillMining();
-		woodcutting = new SkillWoodcutting();
+		mining = new SkillMining("mining");
+		woodcutting = new SkillWoodcutting("woodcutting");
 	}
 
 	@Override
@@ -69,7 +82,32 @@ public class GuiSkill extends GuiScreen {
 		//DRWAS STRINGS FOR WOODCUTTING
 		this.fontRendererObj.drawString("" + woodcutting.getCurrentLevel(), offsetFromScreenLeft + 40, offsetTopScreen + 40, 0xFEFE00);
 		this.fontRendererObj.drawString("" + woodcutting.getCurrentLevel(), offsetFromScreenLeft + 51, offsetTopScreen + 54, 0xFEFE00);
+		
+		List<String> hoverText = new ArrayList<String>();
+		
+		if(isInRect(offsetFromScreenLeft + MINING_X, offsetTopScreen + MINING_Y, SKILL_WIDTH, SKILL_HEIGHT, mouseX, mouseY)) {
+			hoverText.add("Mining: " + mining.levelToString());
+			hoverText.add("Exp: " + mining.expToString());
+			hoverText.add("Left: " + mining.neededToString());
+			
+			
+		}
+		if(isInRect(offsetFromScreenLeft + WOOD_X, offsetTopScreen + WOOD_Y, SKILL_WIDTH, SKILL_HEIGHT, mouseX, mouseY)) {
+			hoverText.add("Woodcutting: " + mining.levelToString());
+			hoverText.add("Exp: " + mining.expToString());
+			hoverText.add("Left: " + mining.neededToString());
+			
+			
+		}
+		
+		if(!hoverText.isEmpty()) {
+			drawHoveringText(hoverText, mouseX , mouseY , fontRendererObj);
+		}
 
+	}
+	
+	public static boolean isInRect(int x, int y, int xSize, int ySize, int mouseX, int mouseY) {
+		return ((mouseX >= x && mouseX <= x + xSize) && (mouseY >= y && mouseY <= y + ySize));
 	}
 
 	@Override
@@ -89,7 +127,7 @@ public class GuiSkill extends GuiScreen {
 
 	@Override
 	public boolean doesGuiPauseGame() {
-		return false;
+		return true;
 	}
 
 }

@@ -3,6 +3,7 @@ package nl.nijenhuis.runecraft.init;
 import net.minecraft.item.Item;
 import nl.nijenhuis.runecraft.help.RegisterHelper;
 import nl.nijenhuis.runecraft.help.RunecraftArmory;
+import nl.nijenhuis.runecraft.items.ItemHammer;
 import nl.nijenhuis.runecraft.items.ItemRunecraft;
 import nl.nijenhuis.runecraft.items.ItemSkillChecker;
 import nl.nijenhuis.runecraft.items.RunecraftAxe;
@@ -41,7 +42,8 @@ public class RCItems {
 	//Skill Checker
 	public static Item skillchecker = new ItemSkillChecker().setUnlocalizedName("skillchecker");
 	
-	
+	//Hammer
+	public static Item itemhammer = new ItemHammer().setUnlocalizedName("itemhammer");
 	
 
 	public static void registerItems() {
@@ -72,6 +74,8 @@ public class RCItems {
 		RegisterHelper.registerItem(axerune);
 		
 		RegisterHelper.registerItem(skillchecker);
+		
+		RegisterHelper.registerItem(itemhammer);
 		
 		
 	}
@@ -104,6 +108,8 @@ public class RCItems {
 		RegisterHelper.registerItemRenderer(axerune);
 		
 		RegisterHelper.registerItemRenderer(skillchecker);
+		
+		RegisterHelper.registerItemRenderer(itemhammer);
 				
 
 	}

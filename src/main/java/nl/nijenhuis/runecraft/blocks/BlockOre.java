@@ -13,10 +13,11 @@ import net.minecraft.world.World;
 import nl.nijenhuis.runecraft.init.RCBlocks;
 import nl.nijenhuis.runecraft.init.RCItems;
 import nl.nijenhuis.runecraft.level.SkillMining;
+import nl.nijenhuis.runecraft.level.SkillWoodcutting;
 
 public class BlockOre extends Block {
 
-	SkillMining level = new SkillMining();
+	SkillMining mining = new SkillMining("mining");
 
 	public BlockOre(Material materialIn) {
 		super(materialIn);
@@ -29,20 +30,24 @@ public class BlockOre extends Block {
 	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
 		super.onBlockDestroyedByPlayer(worldIn, pos, state);
 
-		if(this == RCBlocks.copperore) {
-			level.setAddedXp(15);
-		} else if(this == RCBlocks.tinore) {
-			level.setAddedXp(25);
-		} else if(this == RCBlocks.mithrilore) {
-			level.setAddedXp(50);
+		if(!mining.hasMaxXp()) {
+			if(this == RCBlocks.copperore) {
+				mining.setAddedXp(15);
+			} else if(this == RCBlocks.tinore) {
+				mining.setAddedXp(25);
+			} else if(this == RCBlocks.mithrilore) {
+				mining.setAddedXp(50000);
+			}
+		} else {
+			mining.setAddedXp(0);
 		}
 	
-		SkillMining.setCurrentLevel(level.getCurrentLevel());
-		SkillMining.setCurrentXp(level.getAddedXp() + level.getCurrentXp());
-		System.out.println("EXPERIENCE: " + level.getCurrentXp());
+		SkillMining.setCurrentLevel(mining.getCurrentLevel());
+		SkillMining.setCurrentXp(mining.getAddedXp() + mining.getCurrentXp());
+		//System.out.println("EXPERIENCE: " + mining.getCurrentXp());
 		
-		level.calcExpNeeded();
-		level.levelUp();
+		mining.calcExpNeeded();
+		mining.levelUp();
 	
 	}
 
