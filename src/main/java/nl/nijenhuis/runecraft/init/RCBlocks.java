@@ -3,6 +3,7 @@ package nl.nijenhuis.runecraft.init;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import nl.nijenhuis.runecraft.blocks.BlockAnvil;
+import nl.nijenhuis.runecraft.blocks.BlockFurnace;
 import nl.nijenhuis.runecraft.blocks.BlockOre;
 import nl.nijenhuis.runecraft.help.RegisterHelper;
 
@@ -13,7 +14,7 @@ public class RCBlocks {
 	public static Block tinore = new BlockOre(Material.iron).setUnlocalizedName("tinore");
 	
 	public static Block anvil = new BlockAnvil(Material.iron).setUnlocalizedName("anvil");
-	
+	public static Block furnace = new BlockFurnace(Material.iron).setUnlocalizedName("furnace");
 	
 	public static void registerBlocks() {
 		RegisterHelper.registerBlock(mithrilore);
@@ -21,6 +22,7 @@ public class RCBlocks {
 		RegisterHelper.registerBlock(tinore);
 		RegisterHelper.registerBlock(anvil);
 		
+		RegisterHelper.registerBlock(furnace);
 	}
 	
 	public static void registerBlockRenderer() {
@@ -28,6 +30,8 @@ public class RCBlocks {
 		RegisterHelper.registerBlockRenderer(copperore);
 		RegisterHelper.registerBlockRenderer(tinore);
 		RegisterHelper.registerBlockRenderer(anvil);
+		
+		RegisterHelper.registerBlockRenderer(furnace);
 		
 	}
 

@@ -6,6 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import nl.nijenhuis.runecraft.Runecraft;
+import nl.nijenhuis.runecraft.help.GuiHandler;
 
 public class ItemSkillChecker extends Item {
 	
@@ -16,8 +17,12 @@ public class ItemSkillChecker extends Item {
 	
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn) {
-		if(!worldIn.isRemote) {
-			Runecraft.proxy.openGui();
+		if(worldIn.isRemote) {
+			return itemStackIn;
+		}
+		else {
+			//Runecraft.proxy.openGui();
+			playerIn.openGui(Runecraft.instance, GuiHandler.GUIID_SKILL, worldIn, 0,0 ,0);
 		}
 		return itemStackIn;
 	}

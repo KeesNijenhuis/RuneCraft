@@ -1,5 +1,6 @@
 package nl.nijenhuis.runecraft.client.gui;
 
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,10 +12,13 @@ import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import nl.nijenhuis.runecraft.help.Reference;
 import nl.nijenhuis.runecraft.level.SkillMining;
 import nl.nijenhuis.runecraft.level.SkillWoodcutting;
 
+@SideOnly(Side.CLIENT)
 public class GuiSkill extends GuiScreen {
 
 	private final int imageHeight = 129;
@@ -29,8 +33,6 @@ public class GuiSkill extends GuiScreen {
 	private static final int WOOD_X = 4;
 	private static final int WOOD_Y = 37;
 	
-	
-
 	private static ResourceLocation guiTexture = new ResourceLocation(Reference.MODID + ":textures/gui/gui.png");
 
 	private GuiButton buttonDone;
@@ -67,10 +69,11 @@ public class GuiSkill extends GuiScreen {
 	@Override
 	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
 		super.drawScreen(mouseX, mouseY, partialTicks);
+		
 		GL11.glColor4f(1, 1, 1, 1);
-
+		
 		mc.getTextureManager().bindTexture(guiTexture);
-
+		
 		int offsetFromScreenLeft = (width - imageWidth) / 2;
 		int offsetTopScreen = 20;
 		drawTexturedModalRect(offsetFromScreenLeft, 20, 0, 0, imageWidth, imageHeight);
@@ -89,21 +92,17 @@ public class GuiSkill extends GuiScreen {
 			hoverText.add("Mining: " + mining.levelToString());
 			hoverText.add("Exp: " + mining.expToString());
 			hoverText.add("Left: " + mining.neededToString());
-			
-			
 		}
+		
 		if(isInRect(offsetFromScreenLeft + WOOD_X, offsetTopScreen + WOOD_Y, SKILL_WIDTH, SKILL_HEIGHT, mouseX, mouseY)) {
 			hoverText.add("Woodcutting: " + mining.levelToString());
 			hoverText.add("Exp: " + mining.expToString());
 			hoverText.add("Left: " + mining.neededToString());
-			
-			
 		}
 		
 		if(!hoverText.isEmpty()) {
 			drawHoveringText(hoverText, mouseX , mouseY , fontRendererObj);
 		}
-
 	}
 	
 	public static boolean isInRect(int x, int y, int xSize, int ySize, int mouseX, int mouseY) {

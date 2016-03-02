@@ -25,6 +25,14 @@ item.axemithril.name=Mithril Axe
 item.axeadamant.name=Adamant Axe
 item.axerune.name=Rune Axe
 
+item.barbronze.name=Bronze Bar
+item.bariron.name=Iron Bar
+item.barsteel.name=Steel Bar
+item.barmithril.name=Mithril Bar
+item.baradamantite.name=Adamantite Bar
+item.barrunite.name=Runite Bar
+
+
 tile.copperore.name=Copper Ore
 tile.tinore.name=Tin Ore
 tile.mithrilore.name=Mithril Ore

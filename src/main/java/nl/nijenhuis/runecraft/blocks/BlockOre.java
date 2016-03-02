@@ -13,7 +13,6 @@ import net.minecraft.world.World;
 import nl.nijenhuis.runecraft.init.RCBlocks;
 import nl.nijenhuis.runecraft.init.RCItems;
 import nl.nijenhuis.runecraft.level.SkillMining;
-import nl.nijenhuis.runecraft.level.SkillWoodcutting;
 
 public class BlockOre extends Block {
 

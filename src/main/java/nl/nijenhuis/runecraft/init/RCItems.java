@@ -39,6 +39,15 @@ public class RCItems {
 	public static Item axeadamant = new RunecraftAxe(RunecraftArmory.ADAMANT).setUnlocalizedName("axeadamant");
 	public static Item axerune = new RunecraftAxe(RunecraftArmory.RUNE).setUnlocalizedName("axerune");
 	
+	//BARS
+	public static Item barbronze = new ItemRunecraft().setUnlocalizedName("barbronze");
+	public static Item bariron = new ItemRunecraft().setUnlocalizedName("bariron");
+	public static Item barsteel = new ItemRunecraft().setUnlocalizedName("barsteel");
+	public static Item barmithril = new ItemRunecraft().setUnlocalizedName("barmithril");
+	public static Item baradamantite = new ItemRunecraft().setUnlocalizedName("baradamantite");
+	public static Item barrunite = new ItemRunecraft().setUnlocalizedName("barrunite");
+	
+	
 	//Skill Checker
 	public static Item skillchecker = new ItemSkillChecker().setUnlocalizedName("skillchecker");
 	
@@ -73,6 +82,14 @@ public class RCItems {
 		RegisterHelper.registerItem(axeadamant);
 		RegisterHelper.registerItem(axerune);
 		
+		RegisterHelper.registerItem(barbronze);
+		RegisterHelper.registerItem(bariron);
+		RegisterHelper.registerItem(barsteel);
+		RegisterHelper.registerItem(barmithril);
+		RegisterHelper.registerItem(baradamantite);
+		RegisterHelper.registerItem(barrunite);
+		
+		
 		RegisterHelper.registerItem(skillchecker);
 		
 		RegisterHelper.registerItem(itemhammer);
@@ -106,6 +123,14 @@ public class RCItems {
 		RegisterHelper.registerItemRenderer(axemithril);
 		RegisterHelper.registerItemRenderer(axeadamant);
 		RegisterHelper.registerItemRenderer(axerune);
+		
+		RegisterHelper.registerItemRenderer(barbronze);
+		RegisterHelper.registerItemRenderer(bariron);
+		RegisterHelper.registerItemRenderer(barsteel);
+		RegisterHelper.registerItemRenderer(barmithril);
+		RegisterHelper.registerItemRenderer(baradamantite);
+		RegisterHelper.registerItemRenderer(barrunite);
+		
 		
 		RegisterHelper.registerItemRenderer(skillchecker);
 		
