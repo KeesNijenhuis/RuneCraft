@@ -36,6 +36,8 @@ public class GuiSkill extends GuiScreen {
 	private static ResourceLocation guiTexture = new ResourceLocation(Reference.MODID + ":textures/gui/gui.png");
 
 	private GuiButton buttonDone;
+	
+	private GuiMining guiMining;
 
 	private SkillMining mining;
 	private SkillWoodcutting woodcutting;
@@ -44,6 +46,7 @@ public class GuiSkill extends GuiScreen {
 
 		mining = new SkillMining("mining");
 		woodcutting = new SkillWoodcutting("woodcutting");
+		guiMining = new GuiMining();
 	}
 
 	@Override
@@ -56,14 +59,14 @@ public class GuiSkill extends GuiScreen {
 
 	}
 
-	int levelMining;
-	int currentExp;
+	/*int levelMining;
+	int currentExp;*/
 
 	@Override
 	public void updateScreen() {
-		levelMining = mining.getCurrentLevel();
-		currentExp = mining.getCurrentXp();
-		buttonDone.visible = true;
+		/*levelMining = mining.getCurrentLevel();
+		currentExp = mining.getCurrentXp();*/
+		//buttonDone.visible = true;
 	}
 
 	@Override
@@ -71,6 +74,8 @@ public class GuiSkill extends GuiScreen {
 		super.drawScreen(mouseX, mouseY, partialTicks);
 		
 		GL11.glColor4f(1, 1, 1, 1);
+		
+		buttonDone.visible = true;
 		
 		mc.getTextureManager().bindTexture(guiTexture);
 		
@@ -115,8 +120,23 @@ public class GuiSkill extends GuiScreen {
 
 	@Override
 	protected void actionPerformed(GuiButton button) throws IOException {
-		if (button == buttonDone) {
+		/*if (button == buttonDone) {
 			mc.displayGuiScreen((GuiScreen) null);
+			LogHelper.debug("actionPerformed ha sbeen called");
+		}*/
+	}
+	
+		
+	@Override
+	protected void mouseClicked(int mouseX, int mouseY, int mouseButton) throws IOException {
+		GuiButton button = buttonDone;
+		if(isInRect(((width - imageWidth) / 2) + MINING_X, 20 + MINING_Y, SKILL_WIDTH, SKILL_HEIGHT, mouseX, mouseY)) {
+			mc.displayGuiScreen(guiMining);
+			//System.out.println("mouseClicked has been called");
+		}
+		else if (button == buttonDone) {
+			mc.displayGuiScreen((GuiScreen) null);
+			//LogHelper.debug("actionPerformed ha sbeen called");
 		}
 	}
 
@@ -126,7 +146,7 @@ public class GuiSkill extends GuiScreen {
 
 	@Override
 	public boolean doesGuiPauseGame() {
-		return true;
+		return false;
 	}
 
 }
