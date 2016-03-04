@@ -28,25 +28,25 @@ public class BlockOre extends Block {
 	@Override
 	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
 		super.onBlockDestroyedByPlayer(worldIn, pos, state);
-
-		if(!mining.hasMaxXp()) {
+		
+		if(!mining.hasMaxXpMining()) {
 			if(this == RCBlocks.copperore) {
-				mining.setAddedXp(15);
+				mining.setAddedMiningXp(15);
 			} else if(this == RCBlocks.tinore) {
-				mining.setAddedXp(25);
+				mining.setAddedMiningXp(25);
 			} else if(this == RCBlocks.mithrilore) {
-				mining.setAddedXp(50000);
+				mining.setAddedMiningXp(50000);
 			}
 		} else {
-			mining.setAddedXp(0);
+			mining.setAddedMiningXp(0);
 		}
 	
-		SkillMining.setCurrentLevel(mining.getCurrentLevel());
-		SkillMining.setCurrentXp(mining.getAddedXp() + mining.getCurrentXp());
+		mining.setCurrentMiningLevel(mining.getCurrentMiningLevel());
+		mining.setCurrentMiningXp(mining.getAddedMiningXp() + mining.getCurrentMiningXp());
 		//System.out.println("EXPERIENCE: " + mining.getCurrentXp());
 		
-		mining.calcExpNeeded();
-		mining.levelUp();
+		mining.calcMiningExpNeeded();
+		mining.levelUpMining();
 	
 	}
 

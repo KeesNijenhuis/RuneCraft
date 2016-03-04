@@ -3,6 +3,7 @@ package nl.nijenhuis.runecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -14,6 +15,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import nl.nijenhuis.runecraft.help.GuiHandler;
 import nl.nijenhuis.runecraft.help.RecipeRemover;
 import nl.nijenhuis.runecraft.help.Reference;
+import nl.nijenhuis.runecraft.help.RunecraftEventHandler;
 import nl.nijenhuis.runecraft.init.RCBlocks;
 import nl.nijenhuis.runecraft.init.RCItems;
 import nl.nijenhuis.runecraft.proxy.CommonProxy;
@@ -76,6 +78,8 @@ public class Runecraft {
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
 		proxy.registerRenderers();
+		
+		MinecraftForge.EVENT_BUS.register(new RunecraftEventHandler());
 
 	}
 

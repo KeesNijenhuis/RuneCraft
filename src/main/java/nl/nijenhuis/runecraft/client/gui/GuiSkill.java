@@ -1,6 +1,5 @@
 package nl.nijenhuis.runecraft.client.gui;
 
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,20 +22,20 @@ public class GuiSkill extends GuiScreen {
 
 	private final int imageHeight = 129;
 	private final int imageWidth = 176;
-	
+
 	private static final int SKILL_WIDTH = 64;
 	private static final int SKILL_HEIGHT = 32;
-	
+
 	private static final int MINING_X = 4;
 	private static final int MINING_Y = 4;
-	
+
 	private static final int WOOD_X = 4;
 	private static final int WOOD_Y = 37;
-	
+
 	private static ResourceLocation guiTexture = new ResourceLocation(Reference.MODID + ":textures/gui/gui.png");
 
 	private GuiButton buttonDone;
-	
+
 	private GuiMining guiMining;
 
 	private SkillMining mining;
@@ -59,57 +58,50 @@ public class GuiSkill extends GuiScreen {
 
 	}
 
-	/*int levelMining;
-	int currentExp;*/
-
-	@Override
 	public void updateScreen() {
-		/*levelMining = mining.getCurrentLevel();
-		currentExp = mining.getCurrentXp();*/
-		//buttonDone.visible = true;
 	}
 
 	@Override
 	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
 		super.drawScreen(mouseX, mouseY, partialTicks);
-		
+
 		GL11.glColor4f(1, 1, 1, 1);
-		
+
 		buttonDone.visible = true;
-		
+
 		mc.getTextureManager().bindTexture(guiTexture);
-		
+
 		int offsetFromScreenLeft = (width - imageWidth) / 2;
 		int offsetTopScreen = 20;
 		drawTexturedModalRect(offsetFromScreenLeft, 20, 0, 0, imageWidth, imageHeight);
-		
-		//DRAWS STRINGS FOR MINING
-		this.fontRendererObj.drawString("" + mining.getCurrentLevel(), offsetFromScreenLeft + 40, offsetTopScreen + 10, 0xFEFE00);
-		this.fontRendererObj.drawString("" + mining.getCurrentLevel(), offsetFromScreenLeft + 51, offsetTopScreen + 24, 0xFEFE00);
 
-		//DRWAS STRINGS FOR WOODCUTTING
-		this.fontRendererObj.drawString("" + woodcutting.getCurrentLevel(), offsetFromScreenLeft + 40, offsetTopScreen + 40, 0xFEFE00);
-		this.fontRendererObj.drawString("" + woodcutting.getCurrentLevel(), offsetFromScreenLeft + 51, offsetTopScreen + 54, 0xFEFE00);
-		
+		// DRAWS STRINGS FOR MINING
+		this.fontRendererObj.drawString("" + mining.getCurrentMiningLevel(), offsetFromScreenLeft + 40, offsetTopScreen + 10, 0xFEFE00);
+		this.fontRendererObj.drawString("" + mining.getCurrentMiningLevel(), offsetFromScreenLeft + 51, offsetTopScreen + 24, 0xFEFE00);
+
+		// DRWAS STRINGS FOR WOODCUTTING
+		this.fontRendererObj.drawString("" + woodcutting.getCurrentWCLevel(), offsetFromScreenLeft + 40, offsetTopScreen + 40, 0xFEFE00);
+		this.fontRendererObj.drawString("" + woodcutting.getCurrentWCLevel(), offsetFromScreenLeft + 51, offsetTopScreen + 54, 0xFEFE00);
+
 		List<String> hoverText = new ArrayList<String>();
-		
-		if(isInRect(offsetFromScreenLeft + MINING_X, offsetTopScreen + MINING_Y, SKILL_WIDTH, SKILL_HEIGHT, mouseX, mouseY)) {
-			hoverText.add("Mining: " + mining.levelToString());
-			hoverText.add("Exp: " + mining.expToString());
-			hoverText.add("Left: " + mining.neededToString());
+
+		if (isInRect(offsetFromScreenLeft + MINING_X, offsetTopScreen + MINING_Y, SKILL_WIDTH, SKILL_HEIGHT, mouseX, mouseY)) {
+			hoverText.add("Mining: " + mining.miningLevelToString());
+			hoverText.add("Exp: " + mining.miningExpToString());
+			hoverText.add("Left: " + mining.miningExpNeededToString());
 		}
-		
-		if(isInRect(offsetFromScreenLeft + WOOD_X, offsetTopScreen + WOOD_Y, SKILL_WIDTH, SKILL_HEIGHT, mouseX, mouseY)) {
-			hoverText.add("Woodcutting: " + mining.levelToString());
-			hoverText.add("Exp: " + mining.expToString());
-			hoverText.add("Left: " + mining.neededToString());
+		//FIX THIS SHIT!!!!
+		if (isInRect(offsetFromScreenLeft + WOOD_X, offsetTopScreen + WOOD_Y, SKILL_WIDTH, SKILL_HEIGHT, mouseX, mouseY)) {
+			hoverText.add("Woodcutting: " + woodcutting.wcLevelToString());
+			hoverText.add("Exp: " + woodcutting.wcExpToString());
+			hoverText.add("Left: " + woodcutting.wcExpNeededToString());
 		}
-		
-		if(!hoverText.isEmpty()) {
-			drawHoveringText(hoverText, mouseX , mouseY , fontRendererObj);
+
+		if (!hoverText.isEmpty()) {
+			drawHoveringText(hoverText, mouseX, mouseY, fontRendererObj);
 		}
 	}
-	
+
 	public static boolean isInRect(int x, int y, int xSize, int ySize, int mouseX, int mouseY) {
 		return ((mouseX >= x && mouseX <= x + xSize) && (mouseY >= y && mouseY <= y + ySize));
 	}
@@ -120,23 +112,16 @@ public class GuiSkill extends GuiScreen {
 
 	@Override
 	protected void actionPerformed(GuiButton button) throws IOException {
-		/*if (button == buttonDone) {
-			mc.displayGuiScreen((GuiScreen) null);
-			LogHelper.debug("actionPerformed ha sbeen called");
-		}*/
 	}
-	
-		
+
 	@Override
 	protected void mouseClicked(int mouseX, int mouseY, int mouseButton) throws IOException {
 		GuiButton button = buttonDone;
-		if(isInRect(((width - imageWidth) / 2) + MINING_X, 20 + MINING_Y, SKILL_WIDTH, SKILL_HEIGHT, mouseX, mouseY)) {
+		if (isInRect(((width - imageWidth) / 2) + MINING_X, 20 + MINING_Y, SKILL_WIDTH, SKILL_HEIGHT, mouseX, mouseY)) {
 			mc.displayGuiScreen(guiMining);
-			//System.out.println("mouseClicked has been called");
 		}
-		else if (button == buttonDone) {
+		if (button == buttonDone) {
 			mc.displayGuiScreen((GuiScreen) null);
-			//LogHelper.debug("actionPerformed ha sbeen called");
 		}
 	}
 
