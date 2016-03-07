@@ -38,3 +38,11 @@ tile.tinore.name=Tin Ore
 tile.mithrilore.name=Mithril Ore
 
 tile.anvil.name=Anvil
+tile.furnace.name=Furnace
+
+tile.treenormal.name=Tree
+tile.treeoak.name=Oak Tree
+tile.treewillow.name=Willow Tree
+tile.treemaple.name=Maple Tree
+tile.treemahogany.name=Mahogany Tree
+tile.treeyew.name=Yew Tree

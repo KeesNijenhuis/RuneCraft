@@ -31,11 +31,11 @@ public class BlockOre extends Block {
 		
 		if(!mining.hasMaxXpMining()) {
 			if(this == RCBlocks.copperore) {
-				mining.setAddedMiningXp(15);
+				mining.setAddedMiningXp(8);
 			} else if(this == RCBlocks.tinore) {
-				mining.setAddedMiningXp(25);
+				mining.setAddedMiningXp(13);
 			} else if(this == RCBlocks.mithrilore) {
-				mining.setAddedMiningXp(50000);
+				mining.setAddedMiningXp(20);
 			}
 		} else {
 			mining.setAddedMiningXp(0);

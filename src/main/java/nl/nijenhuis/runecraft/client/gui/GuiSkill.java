@@ -37,6 +37,7 @@ public class GuiSkill extends GuiScreen {
 	private GuiButton buttonDone;
 
 	private GuiMining guiMining;
+	private GuiWoodcutting guiWoodcutting;
 
 	private SkillMining mining;
 	private SkillWoodcutting woodcutting;
@@ -46,6 +47,7 @@ public class GuiSkill extends GuiScreen {
 		mining = new SkillMining("mining");
 		woodcutting = new SkillWoodcutting("woodcutting");
 		guiMining = new GuiMining();
+		guiWoodcutting = new GuiWoodcutting();
 	}
 
 	@Override
@@ -90,7 +92,7 @@ public class GuiSkill extends GuiScreen {
 			hoverText.add("Exp: " + mining.miningExpToString());
 			hoverText.add("Left: " + mining.miningExpNeededToString());
 		}
-		//FIX THIS SHIT!!!!
+
 		if (isInRect(offsetFromScreenLeft + WOOD_X, offsetTopScreen + WOOD_Y, SKILL_WIDTH, SKILL_HEIGHT, mouseX, mouseY)) {
 			hoverText.add("Woodcutting: " + woodcutting.wcLevelToString());
 			hoverText.add("Exp: " + woodcutting.wcExpToString());
@@ -120,9 +122,12 @@ public class GuiSkill extends GuiScreen {
 		if (isInRect(((width - imageWidth) / 2) + MINING_X, 20 + MINING_Y, SKILL_WIDTH, SKILL_HEIGHT, mouseX, mouseY)) {
 			mc.displayGuiScreen(guiMining);
 		}
-		if (button == buttonDone) {
-			mc.displayGuiScreen((GuiScreen) null);
+		else if(isInRect(((width - imageWidth) / 2) + WOOD_X, 20 + WOOD_Y, SKILL_WIDTH, SKILL_HEIGHT, mouseX, mouseY)) {
+			mc.displayGuiScreen(guiWoodcutting);
 		}
+		else if (button == buttonDone) {
+			mc.displayGuiScreen((GuiScreen) null);
+		} 
 	}
 
 	@Override
